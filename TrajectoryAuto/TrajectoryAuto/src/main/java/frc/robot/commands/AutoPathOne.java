@@ -8,12 +8,14 @@
 // update. Deleting the comments indicating the section will prevent
 // it from being updated in the future.
 
-
 package frc.robot.commands;
+
 import edu.wpi.first.wpilibj.command.Command;
 import edu.wpi.first.wpilibj.controller.SimpleMotorFeedforward;
+import edu.wpi.first.wpilibj.geometry.Pose2d;
 import edu.wpi.first.wpilibj.geometry.Rotation2d;
 import edu.wpi.first.wpilibj.geometry.Translation2d;
+import edu.wpi.first.wpilibj.trajectory.Trajectory;
 import edu.wpi.first.wpilibj.trajectory.TrajectoryConfig;
 import edu.wpi.first.wpilibj.trajectory.TrajectoryGenerator;
 import edu.wpi.first.wpilibj.trajectory.constraint.DifferentialDriveVoltageConstraint;
@@ -63,8 +65,8 @@ public class AutoPathOne extends Command {
                 Robot.chassis.kDriveKinematics, 10);
         TrajectoryConfig config =
             new TrajectoryConfig(Chassis.kMaxSpeedMsPerSecond, Chassis.kMaxAccelerationMsPerSecondSquared)
-            .setKinematics(Chassis.kDriveKinematics)
-            .addConstraint(autoVoltageConstraint);
+                .setKinematics(Chassis.kDriveKinematics)
+                .addConstraint(autoVoltageConstraint);
 
     //unsure as to where actual paths go, but will be placed in execute
     //check on this with others
@@ -82,9 +84,7 @@ public class AutoPathOne extends Command {
     // Called repeatedly when this Command is scheduled to run
     @Override
     protected void execute() {
-        //put things on here
     }
-
     // Make this return true when this Command no longer needs to run execute()
     @Override
     protected boolean isFinished() {
